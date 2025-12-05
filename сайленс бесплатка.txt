@@ -2242,30 +2242,3 @@ FastFarmingTab:AddButton("Anti Lag (Only for Fast Farm!)", function()
     removeLightSources()
     darkenSky()
 end)
-
-
-infoTab:Show()
-infoTab:AddLabel("made by Henne").TextSize = 20
-infoTab:AddLabel("Official Discord: discord.gg/silencev1").TextSize = 20
-infoTab:AddButton("Copy Discord Invite", function()
-    local link = "https://discord.gg/9eFf93Kg8D"
-    if setclipboard then
-        setclipboard(link)
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Link Copied!";
-            Text = "You can continue to Discord now.";
-            Duration = 3;
-        })
-    else
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Error!";
-            Text = "Clipboard not Supported.";
-            Duration = 3;
-        })
-    end
-end)
-
-infoTab:AddLabel("")
-local wLabel = infoTab:AddLabel("Silence Public [V.1.1.1]")
-wLabel.TextSize = 30
-wLabel.Font = Enum.Font.Arcade
