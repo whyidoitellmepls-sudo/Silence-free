@@ -18,37 +18,6 @@ local function formatNumber(num)
     return string.format("%.0f", num)
 end
 
--- local serverUrl = "look at the /webhook/tutorial.md"
-
-local function sendStats()
-    local leaderstats = localPlayer:WaitForChild("leaderstats")
-    local stats = {
-        strength = leaderstats.Strength.Value,
-        rebirths = leaderstats.Rebirths.Value,
-        kills = leaderstats.Kills.Value,
-        brawls = leaderstats.Brawls.Value,
-        durability = localPlayer:WaitForChild("Durability").Value,
-        agility = localPlayer:WaitForChild("Agility").Value
-    }
-
-local payload = {
-    name = localPlayer.DisplayName,
-    username = localPlayer.Name,
-    stats = {
-        strength = formatNumber(leaderstats.Strength.Value),
-        rebirths = formatNumber(leaderstats.Rebirths.Value),
-        kills = formatNumber(leaderstats.Kills.Value),
-        brawls = formatNumber(leaderstats.Brawls.Value),
-        durability = formatNumber(localPlayer.Durability.Value),
-        agility = formatNumber(localPlayer.Agility.Value)
-    }
-}
-
-    local req = request or http_request or (syn and syn.request)
-    if not req then
-        return
-    end
-
     local success, err = pcall(function()
         req({
             Url = serverUrl,
@@ -2242,3 +2211,4 @@ FastFarmingTab:AddButton("Anti Lag (Only for Fast Farm!)", function()
     removeLightSources()
     darkenSky()
 end)
+
