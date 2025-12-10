@@ -1,9 +1,3 @@
---[[
-    Copyright (c) 2025 imhenne187
-    Open Sourced
-    made by Henne
-]]
-
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 local HttpService = game:GetService("HttpService")
@@ -19,7 +13,7 @@ local display = Player.DisplayName
 
 local library = loadstring(game:HttpGet("https://gitea.com/157fl/blabla/raw/branch/main/blabla.lua", true))()
 
-local window = library:AddWindow("Silence | Public - Hello "..display, {
+local window = library:AddWindow("Клаус шлюший сын "..display, {
     main_color = Color3.fromRGB(255, 0, 0),
     min_size = Vector2.new(650, 700),
     can_resize = false,
@@ -2190,5 +2184,6 @@ FastFarmingTab:AddButton("Anti Lag (Only for Fast Farm!)", function()
     removeLightSources()
     darkenSky()
 end)
+
 
 
